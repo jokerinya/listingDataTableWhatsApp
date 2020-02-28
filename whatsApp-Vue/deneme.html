@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denemeler</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- Whatsapp Start -->
+    <script type="text/javascript" src="WhatsApp/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="WhatsApp/floating-wpp.min.css" />
+    <script type="text/javascript" src="WhatsApp/floating-wpp.min.js"></script>
+    <script src="WhatsApp/whatsAppEdit.js" defer></script>
+    <!-- Whatsapp Finish, Vue Start -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="vue/vueApp.js" defer></script>
+    <!-- Vue Finish, Denemler Start -->
+    <script src="deneme/app.js"></script>
+    <script src="deneme/appTwo.js" defer></script>
+    <!-- Denemeler Finish -->
+  </head>
+  <body>
+    <div id="computed">
+      <h1>{{ message }}</h1>
+      <button @click="numArtis">num</button>
+      <button @click="scoreArtis">score</button>
+      <button @click="reset">Reset</button>
+      <p>Number: {{addToNum}}</p>
+      <p>Score:{{addToScore}}</p>
+    </div>
+
+    <div class="deneme">
+      <!--Div where the WhatsApp will be rendered-->
+      <div id="WAButton"></div>
+    </div>
+  </body>
+</html>

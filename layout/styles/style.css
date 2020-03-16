@@ -1,3 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan+2:500,600,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+html {
+  font-family: "Baloo Chettan 2", cursive;
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 3.5rem auto 1.5rem;
+  grid-template-areas: "header" "main" "footer";
+  height: 100%;
+  background: url("https://www.macobserver.com/wp-content/uploads/2016/07/Galaxy-NGC-3190b.jpg") center/cover repeat;
+  color: white;
+}
+
+.main__header {
+  grid-area: header;
+  background-color: #0898ec;
+  display: flex;
+  justify-content: space-between;
+}
+.main__header button {
+  margin: 1rem;
+  padding: 0.5rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #0898ec;
+}
+.main__header h3 {
+  margin: 1rem;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  color: white;
+  background: #0898ec;
+  border: 1px solid;
+}
+
+input {
+  padding: 0.5rem;
+}
+
+.backdrop {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal {
+  z-index: 11;
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.5px solid #c2b3b3;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  width: 70%;
+  animation: fade-slide-in 0.5s ease-out forwards;
+}
+@media (min-width: 40rem) {
+  .modal {
+    width: auto;
+  }
+}
+.modal .modal__add-title {
+  text-align: center;
+}
+.modal button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  color: #0898ec;
+}
+.modal button:hover {
+  color: white;
+}
+
+form {
+  display: grid;
+  grid-auto-rows: 1.5rem;
+  grid-row-gap: 0.5rem;
+}
+@media (min-width: 40rem) {
+  form {
+    margin: auto;
+    width: 25rem;
+    grid-template-columns: 7rem auto;
+    grid-row-gap: 1rem;
+    grid-column-gap: 0.5rem;
+  }
+}
+form label,
+form input {
+  display: block;
+  width: 100%;
+  color: white;
+}
+form input {
+  background-color: #0898ec;
+  border: #0898ec;
+  border-radius: 3px;
+}
+form #info {
+  grid-row: span 3;
+}
+form .buttons__area {
+  text-align: right;
+}
+@media (min-width: 40rem) {
+  form .buttons__area {
+    grid-column: span 2;
+  }
+}
+
+.delete__modal {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.delete__modal p {
+  margin: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+.delete__modal div {
+  align-self: flex-end;
+}
+.delete__modal #btn_danger:hover {
+  background: red;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 40rem) {
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+main .card__empty {
+  border: 0.5px solid #c2b3b3;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+main .film__card {
+  margin: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid #c2b3b3;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+main .film__card .img__container img {
+  max-height: 4rem;
+  max-width: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+main .film__card .info__container {
+  display: flex;
+  flex-direction: column;
+}
+main .film__card .info__container h3 {
+  margin: 0;
+}
+main .film__card .info__container p {
+  margin: 0;
+  font-weight: normal;
+}
+main .film__card .info__container .btn {
+  background: orange;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  align-self: flex-end;
+  color: inherit;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  border-top: 1px solid #c2b3b3;
+}
+
+@keyframes fade-slide-in {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

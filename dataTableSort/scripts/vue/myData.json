@@ -1,0 +1,46 @@
+{
+  "infos": [
+    {
+      "name": "Tiger Nixon",
+      "duty": "System Architect",
+      "location": "Edinburgh",
+      "age": 61,
+      "income": "320800"
+    },
+    {
+      "name": "Garrett Winters",
+      "duty": "Accountant",
+      "location": "Tokyo",
+      "age": 63,
+      "income": "170750"
+    },
+    {
+      "name": "Ashton Cox",
+      "duty": "Junior Technical Author",
+      "location": "San Francisco",
+      "age": 66,
+      "income": "86000"
+    },
+    {
+      "name": "Cedric Kelly",
+      "duty": "Senior Javascript Developer",
+      "location": "Edinburgh",
+      "age": 22,
+      "income": "433060"
+    },
+    {
+      "name": "ibrahim",
+      "duty": "System Architect",
+      "location": "Turkey",
+      "age": 30,
+      "income": "8000"
+    },
+    {
+      "name": "Havali",
+      "duty": "Mal",
+      "location": "Tokyo",
+      "age": 1,
+      "income": "1000000"
+    }
+  ]
+}

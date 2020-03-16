@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.loading__deneme {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-top: 2px solid green;
+  border-right: 1px solid grey;
+  border-bottom: 2px solid green;
+  border-left: 2px solid green;
+  border-radius: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  animation: dondur 1s infinite cubic-bezier(0, 0, 0.5, 0.5) none;
+}
+
+@keyframes dondur {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(1turn);
+  }
+}

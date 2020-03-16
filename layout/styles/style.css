@@ -13,12 +13,16 @@ html {
 
 body {
   margin: 0;
+  background: url("https://www.macobserver.com/wp-content/uploads/2016/07/Galaxy-NGC-3190b.jpg") center/cover repeat;
+  color: white;
+  height: 100%;
+}
+
+#app {
   display: grid;
   grid-template-rows: 3.5rem auto 1.5rem;
   grid-template-areas: "header" "main" "footer";
   height: 100%;
-  background: url("https://www.macobserver.com/wp-content/uploads/2016/07/Galaxy-NGC-3190b.jpg") center/cover repeat;
-  color: white;
 }
 
 .main__header {

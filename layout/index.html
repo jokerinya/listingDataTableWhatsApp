@@ -5,110 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/style.css" />
     <title>Layout</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <header class="main__header">
-      <h3>Filmler</h3>
-      <button>Yeni Film Ekle</button>
-    </header>
-    <div class="backdrop"></div>
-    <main>
-      <div class="modal modal__add" style="display: none;">
-        <h3 class="modal__add-title">Film Ekle</h3>
-        <form class="modal__add-form">
-          <label for="name">İsim</label>
-          <input type="text" name="name" id="name" />
-          <label for="img_url">Resim</label>
-          <input type="text" name="img_url" id="img_url" />
-          <label for="info">Açıklama</label>
-          <input type="text" name="info" id="info" />
-          <div class="buttons__area">
-            <button id="btn_exit">Vazgeç</button>
-            <button id="btn_add">Ekle</button>
+    <div id="app">
+      <header class="main__header">
+        <h3>{{ message }}</h3>
+        <button>Yeni Film Ekle</button>
+      </header>
+      <div class="backdrop"></div>
+      <main>
+        <div class="modal modal__add" style="display: none;">
+          <h3 class="modal__add-title">Film Ekle</h3>
+          <form class="modal__add-form">
+            <label for="name">İsim</label>
+            <input type="text" name="name" id="name" />
+            <label for="img_url">Resim</label>
+            <input type="text" name="img_url" id="img_url" />
+            <label for="info">Açıklama</label>
+            <input type="text" name="info" id="info" />
+            <div class="buttons__area">
+              <button id="btn_exit">Vazgeç</button>
+              <button id="btn_add">Ekle</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal delete__modal">
+          <p>Silmek istediğinize emin misiniz?</p>
+          <div>
+            <button id="btn_exit-delete">Vazgeç</button>
+            <button id="btn_danger">Evet!</button>
           </div>
-        </form>
-      </div>
-      <div class="modal delete__modal">
-        <p>Silmek istediğinize emin misiniz?</p>
-        <div>
-          <button id="btn_exit-delete">Vazgeç</button>
-          <button id="btn_danger">Evet!</button>
         </div>
-      </div>
-      <div class="card__empty">
-        Şahsi film albümün. Haydi filmini ekle.
-      </div>
-      <div class="film__card">
-        <div class="img__container">
-          <img
-            src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
-            alt="Something"
-          />
+        <div class="card__empty">
+          Şahsi film albümün. Haydi filmini ekle.
         </div>
-        <div class="info__container">
-          <h3 class="info__container-header">
-            Some Info
-          </h3>
-          <p class="info__container-detail">
-            Some info detailed
-          </p>
-          <button class="btn">Sil</button>
+        <div class="film__card">
+          <div class="img__container">
+            <img
+              src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
+              alt="Something"
+            />
+          </div>
+          <div class="info__container">
+            <h3 class="info__container-header">
+              Some Info
+            </h3>
+            <p class="info__container-detail">
+              Some info detailed
+            </p>
+            <button class="btn">Sil</button>
+          </div>
         </div>
-      </div>
-      <div class="film__card">
-        <div class="img__container">
-          <img
-            src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
-            alt="Something"
-          />
+        <div class="film__card">
+          <div class="img__container">
+            <img
+              src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
+              alt="Something"
+            />
+          </div>
+          <div class="info__container">
+            <h3 class="info__container-header">
+              Some Info
+            </h3>
+            <p class="info__container-detail">
+              Some info detailed
+            </p>
+            <button class="btn">Sil</button>
+          </div>
         </div>
-        <div class="info__container">
-          <h3 class="info__container-header">
-            Some Info
-          </h3>
-          <p class="info__container-detail">
-            Some info detailed
-          </p>
-          <button class="btn">Sil</button>
+        <div class="film__card">
+          <div class="img__container">
+            <img
+              src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
+              alt="Something"
+            />
+          </div>
+          <div class="info__container">
+            <h3 class="info__container-header">
+              Some Info
+            </h3>
+            <p class="info__container-detail">
+              Some info detailed
+            </p>
+            <button class="btn">Sil</button>
+          </div>
         </div>
-      </div>
-      <div class="film__card">
-        <div class="img__container">
-          <img
-            src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
-            alt="Something"
-          />
+        <div class="film__card">
+          <div class="img__container">
+            <img
+              src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
+              alt="Something"
+            />
+          </div>
+          <div class="info__container">
+            <h3 class="info__container-header">
+              Some Info
+            </h3>
+            <p class="info__container-detail">
+              Some info detailed
+            </p>
+            <button class="btn">Sil</button>
+          </div>
         </div>
-        <div class="info__container">
-          <h3 class="info__container-header">
-            Some Info
-          </h3>
-          <p class="info__container-detail">
-            Some info detailed
-          </p>
-          <button class="btn">Sil</button>
-        </div>
-      </div>
-      <div class="film__card">
-        <div class="img__container">
-          <img
-            src="https://i.pinimg.com/originals/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.png"
-            alt="Something"
-          />
-        </div>
-        <div class="info__container">
-          <h3 class="info__container-header">
-            Some Info
-          </h3>
-          <p class="info__container-detail">
-            Some info detailed
-          </p>
-          <button class="btn">Sil</button>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <p>Maid by Jokerinya</p>
-    </footer>
+      </main>
+      <footer>
+        <p>Maid by Jokerinya</p>
+      </footer>
+    </div>
   </body>
 </html>

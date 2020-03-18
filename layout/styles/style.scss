@@ -9,8 +9,11 @@
 
 html {
   font-family: 'Baloo Chettan 2', cursive;
-  font-size: 1.5rem;
+  font-size: 1rem;
   height: 100%;
+  @media (min-width: 40rem) {
+    font-size: 1.5rem;
+  }
 }
 
 body {
@@ -70,12 +73,14 @@ input {
   position: fixed;
   z-index: 10;
   background: rgba(0, 0, 0, 0.5);
-  display: none;
+  // display: none;
   //   bunu kaldır
 }
 
 .modal {
   z-index: 11;
+  position: fixed;
+  background: saddlebrown;
   margin: 1rem;
   padding: 1rem;
   border: 0.5px solid map-get($colors, gri);
@@ -150,7 +155,7 @@ form {
   #btn_danger:hover {
     background: red;
   }
-  display: none;
+  // display: none;
   //   bunu kaldır
 }
 
@@ -159,10 +164,12 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   @media (min-width: 40rem) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .card__empty {
     border: 0.5px solid map-get($colors, gri);
@@ -170,7 +177,8 @@ main {
     margin: 2rem;
     border-radius: 5px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-    display: none;
+    text-align: center;
+    // display: none;
     // burası toogle yapacak
   }
   .film__card {
@@ -181,6 +189,12 @@ main {
     border: 0.5px solid map-get($colors, gri);
     border-radius: 5px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    width: 15rem;
+    height: auto;
+    @media (min-width: 40rem) {
+      width: auto;
+      height: 10rem;
+    }
     //
     // display: none;
     .img__container {

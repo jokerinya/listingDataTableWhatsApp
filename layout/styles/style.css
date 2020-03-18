@@ -1,34 +1,51 @@
-@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan+2:500,600,700&display=swap");
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2:500,600,700&display=swap');
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-family: "Baloo Chettan 2", cursive;
-  font-size: 1.5rem;
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 1rem;
   height: 100%;
+}
+@media (min-width: 40rem) {
+  html {
+    font-size: 1.5rem;
+  }
 }
 
 body {
   margin: 0;
-  background: url("https://www.macobserver.com/wp-content/uploads/2016/07/Galaxy-NGC-3190b.jpg") center/cover repeat;
+  background: url('https://www.macobserver.com/wp-content/uploads/2016/07/Galaxy-NGC-3190b.jpg')
+    center/cover repeat;
   color: white;
   height: 100%;
 }
 
 #app {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 3.5rem auto 1.5rem;
   grid-template-rows: 3.5rem auto 1.5rem;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: 'header' 'main' 'footer';
   height: 100%;
 }
 
 .main__header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: header;
   background-color: #0898ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .main__header button {
@@ -65,17 +82,20 @@ input {
   position: fixed;
   z-index: 10;
   background: rgba(0, 0, 0, 0.5);
-  display: none;
 }
 
 .modal {
   z-index: 11;
+  position: fixed;
+  background: saddlebrown;
   margin: 1rem;
   padding: 1rem;
   border: 0.5px solid #c2b3b3;
   border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   width: 70%;
+  -webkit-animation: fade-slide-in 0.5s ease-out forwards;
   animation: fade-slide-in 0.5s ease-out forwards;
 }
 @media (min-width: 40rem) {
@@ -100,6 +120,7 @@ input {
 }
 
 form {
+  display: -ms-grid;
   display: grid;
   grid-auto-rows: 1.5rem;
   grid-row-gap: 0.5rem;
@@ -108,6 +129,7 @@ form {
   form {
     margin: auto;
     width: 25rem;
+    -ms-grid-columns: 7rem 0.5rem auto;
     grid-template-columns: 7rem auto;
     grid-row-gap: 1rem;
     grid-column-gap: 0.5rem;
@@ -125,6 +147,7 @@ form input {
   border-radius: 3px;
 }
 form #info {
+  -ms-grid-row-span: 3;
   grid-row: span 3;
 }
 form .buttons__area {
@@ -132,14 +155,19 @@ form .buttons__area {
 }
 @media (min-width: 40rem) {
   form .buttons__area {
+    -ms-grid-column-span: 2;
     grid-column: span 2;
   }
 }
 
 .delete__modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  display: none;
 }
 .delete__modal p {
   margin: 1rem;
@@ -147,6 +175,7 @@ form .buttons__area {
   text-align: center;
 }
 .delete__modal div {
+  -ms-flex-item-align: end;
   align-self: flex-end;
 }
 .delete__modal #btn_danger:hover {
@@ -154,16 +183,36 @@ form .buttons__area {
 }
 
 main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 @media (min-width: 40rem) {
   main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 main .card__empty {
@@ -171,26 +220,47 @@ main .card__empty {
   padding: 2rem;
   margin: 2rem;
   border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-  display: none;
+  text-align: center;
 }
 main .film__card {
   margin: 1rem;
   padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border: 0.5px solid #c2b3b3;
   border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  width: 15rem;
+  height: auto;
+}
+@media (min-width: 40rem) {
+  main .film__card {
+    width: auto;
+    height: 10rem;
+  }
 }
 main .film__card .img__container img {
   max-height: 4rem;
   max-width: 4rem;
   border-radius: 50%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 main .film__card .info__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 main .film__card .info__container h3 {
@@ -206,23 +276,37 @@ main .film__card .info__container .btn {
   cursor: pointer;
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
+  -ms-flex-item-align: end;
   align-self: flex-end;
   color: inherit;
 }
 
 footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: footer;
   text-align: center;
   border-top: 1px solid #c2b3b3;
 }
 
-@keyframes fade-slide-in {
+@-webkit-keyframes fade-slide-in {
   from {
+    -webkit-transform: translateY(-5rem);
     transform: translateY(-5rem);
   }
   to {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+@keyframes fade-slide-in {
+  from {
+    -webkit-transform: translateY(-5rem);
+    transform: translateY(-5rem);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}

@@ -29,12 +29,13 @@
               v-model="yeniFilm.url"
             />
             <label for="info">Açıklama</label>
-            <input
-              type="text"
+            <textarea
               name="info"
               id="info"
               v-model="yeniFilm.aciklama"
-            />
+              cols="30"
+              rows="10"
+            ></textarea>
             <div class="buttons__area">
               <button id="btn_exit" @click.prevent="yeniFilmKapat">
                 Vazgeç

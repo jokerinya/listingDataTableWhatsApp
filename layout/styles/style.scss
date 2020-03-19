@@ -115,7 +115,7 @@ form {
   @media (min-width: 40rem) {
     margin: auto;
     width: 25rem;
-    grid-template-columns: 7rem auto;
+    grid-template-columns: 5rem auto;
     grid-row-gap: 1rem;
     grid-column-gap: 0.5rem;
   }
@@ -123,12 +123,27 @@ form {
   input {
     display: block;
     width: 100%;
-    color: white;
   }
-  input {
-    background-color: map-get($colors, mavi);
-    border: map-get($colors, mavi);
-    border-radius: 3px;
+  textarea {
+    max-width: 465px;
+    max-height: 175px;
+    padding: 0.3rem;
+  }
+  input,
+  textarea {
+    // background-color: map-get($colors, mavi);
+    // border: map-get($colors, mavi);
+    border: none;
+    background-color: transparent;
+    border-bottom: 3px solid white;
+    // border-radius: 3px;
+    color: white;
+    font-family: inherit;
+  }
+  input:focus,
+  textarea:focus {
+    border-color: map-get($colors, mavi);
+    outline: none;
   }
   #info {
     grid-row: span 3;

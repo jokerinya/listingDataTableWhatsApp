@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Layout</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="main__header">
+        <h3>{{ message }}</h3>
+        <button @click.prevent="yeniFilmAc">Yeni Film Ekle</button>
+      </header>
+      <div class="backdrop" v-show="backdrop" @click="yeniFilmKapat"></div>
+      <main>
+        <div class="modal modal__add" v-show="addModal">
+          <h3 class="modal__add-title">Film Ekle</h3>
+          <form class="modal__add-form">
+            <label for="name">İsim</label>
+            <input type="text" name="name" id="name" v-model="yeniFilm.adi" />
+            <label for="img_url">Resim</label>
+            <input
+              type="text"
+              name="img_url"
+              id="img_url"
+              v-model="yeniFilm.url"
+            />
+            <label for="info">Açıklama</label>
+            <textarea
+              name="info"
+              id="info"
+              v-model="yeniFilm.aciklama"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <div class="buttons__area">
+              <button id="btn_exit" @click.prevent="yeniFilmKapat">
+                Vazgeç
+              </button>
+              <button id="btn_add" @click.prevent="yeniFilmBilgi">Ekle</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal delete__modal" v-show="deleteModal">
+          <p>Silmek istediğinize emin misiniz?</p>
+          <div>
+            <button id="btn_exit-delete" @click.prevent="yeniFilmKapat">
+              Vazgeç
+            </button>
+            <button id="btn_danger" @click.prevent="filmSilmeyiOnay">
+              Evet!
+            </button>
+          </div>
+        </div>
+        <div class="card__empty" v-if="!filmler.length">
+          <h3>Film Albümü.</h3>
+          <p>Haydi filmini ekle.</p>
+        </div>
+        <div class="film__card" v-for="(film, index) in filmler" :key="index">
+          <div class="img__container">
+            <img :src="film.url" :alt="film.adi" />
+          </div>
+          <div class="info__container">
+            <h3 class="info__container-header">
+              {{film.adi}}
+            </h3>
+            <p class="info__container-detail">
+              {{film.aciklama}}
+            </p>
+            <button class="btn" @click.prevent="deleteFilm(index)">Sil</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>Made by Jokerinya- {{yil}}</p>
+      </footer>
+    </div>
+  </body>
+</html>

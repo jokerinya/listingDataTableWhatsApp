@@ -55,7 +55,7 @@
             </button>
           </div>
         </div>
-        <div class="card__empty" v-if="!filmler.length">
+        <div class="card__empty" v-if="!filmler.length" style="color: black;" >
           <h3>Film Albümü.</h3>
           <p>Haydi filmini ekle.</p>
         </div>
@@ -63,7 +63,7 @@
           <div class="img__container">
             <img :src="film.url" :alt="film.adi" />
           </div>
-          <div class="info__container">
+          <div class="info__container" style="color: black;">
             <h3 class="info__container-header">
               {{film.adi}}
             </h3>

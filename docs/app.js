@@ -15,17 +15,10 @@ var app = new Vue({
       },
       {
         id: 2,
-        adi: ' Ailecek Şaşkınız',
+        adi: 'Matrix',
         url:
-          'https://www.fullizlet.com/wp-content/uploads/2019/04/1520248689_5a9d2771491e8.jpg',
-        aciklama: 'Komikti, Tam bir aile filmi.'
-      },
-      {
-        id: 3,
-        adi: 'Node Js',
-        url:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSKMt5bEr64f9qI1h98KTczaOR2X0CW3GmHFaJHD_Ty8OmPOsyz',
-        aciklama: 'Her Web Developer ın öğrenmesi gereken dil.'
+          'https://upload.wikimedia.org/wikipedia/fi/thumb/c/c1/The_Matrix_Poster.jpg/250px-The_Matrix_Poster.jpg',
+        aciklama: 'Heyecan dolu, macera, aksiyon ve felfese icerikli bir film.'
       }
     ],
     yil: '',
